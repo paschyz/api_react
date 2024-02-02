@@ -12,6 +12,7 @@ const taskSchema = new Schema<ITask>({
     isDone:Boolean,
 }, {versionKey:false});
 
+
 const TaskModel = model<ITask>('tasks', taskSchema);
 
 export { TaskModel };

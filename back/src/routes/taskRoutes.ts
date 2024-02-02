@@ -14,4 +14,8 @@ router.post('/', async (req: Request, res: Response) => {
     TaskController.createTask(req, res, name);
 })
 
+// router.get('/:id', async (req: Request, res: Response) => {
+//     TaskController.getTaskById(req,res, req.params.id);
+// });
+
 export { router };
