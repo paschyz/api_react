@@ -15,6 +15,16 @@ export const getTasks = async (req :Request, res:Response )=> {
 
 export const createTask = async (req: Request, res:Response, name:String) => {
     try{
+
+        if (!name || typeof name !== 'string' || name.trim() === '') {
+            return res.status(400).send('Name is required and must be string');    
+        }
+
+        if (name.length > 50 ){
+            return res.status(400).send("The length of the task should not exceed 50 characters");
+
+        }
+
         const task = [{name: name,
     isDone:false}];
         const taskResponse = await TaskModel.create(task);
