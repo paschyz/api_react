@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:18
+FROM node:16-bullseye
 
 # Set the working directory to /app
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose port 5000 to the outside world
-EXPOSE 5000
+EXPOSE 3000
 
 # Command to run the application
 CMD ["npm", "start"]

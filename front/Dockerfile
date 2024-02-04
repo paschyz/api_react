@@ -1,5 +1,5 @@
-# Use an official Node.js runtime as a parent image
-FROM node:18
+# Use an official Node.js LTS (Long Term Support) version as a parent image
+FROM node:16-bullseye
 
 # Set the working directory to /app
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expose port 3000 to the outside world
-EXPOSE 3000
+EXPOSE 5000
 
 # Command to run the application
 CMD ["npm", "run", "dev"]

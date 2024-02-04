@@ -6,7 +6,7 @@ services:
       context: ./front
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "5000:5000"
     depends_on:
       - back
 
@@ -15,7 +15,7 @@ services:
       context: ./back
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "3000:3000"
     environment:
       NODE_ENV: production
 
