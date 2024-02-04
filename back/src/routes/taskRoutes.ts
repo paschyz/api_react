@@ -14,8 +14,25 @@ router.post('/', async (req: Request, res: Response) => {
     TaskController.createTask(req, res, name);
 })
 
-// router.get('/:id', async (req: Request, res: Response) => {
-//     TaskController.getTaskById(req,res, req.params.id);
-// });
+router.get('/:id', async (req: Request, res: Response) => {
+    const taskId = req.params.id; 
+    await TaskController.getTaskById(req, res, taskId);
+});
+
+router.put('/:id', async (req: Request, res: Response) => {
+    const taskId = req.params.id; 
+    await TaskController.updateTaskById(req, res, taskId);
+});
+
+router.put('/check/:id', async (req: Request, res: Response) => {
+    const taskId = req.params.id; 
+    await TaskController.checkTaskById(req, res, taskId);
+});
+
+
+router.delete('/:id', async (req: Request, res: Response) => {
+    const taskId = req.params.id;
+    await TaskController.deleteTaskById(req, res, taskId);
+});
 
 export { router };
