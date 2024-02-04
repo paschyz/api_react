@@ -1,4 +1,4 @@
-// server.ts
+
 import express from 'express';
 import { mongoose } from './config/database';
 import { router } from './routes/taskRoutes';

@@ -1,7 +1,5 @@
-// models.ts
 import { Document, Schema, model } from 'mongoose';
 
-// Define mongoose schema and model
 interface ITask extends Document {
     name:string;
     isDone:boolean;
