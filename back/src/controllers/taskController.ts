@@ -69,7 +69,6 @@ export const checkTaskById = async (req :Request, res:Response ,id:string)=> {
         taskId: parseInt(id, 10),
       }
       let task = await TaskModel.findOne(filter,"isDone");
-      console.log(task?.isDone);
       const tasks = await TaskModel.updateOne(filter, { $set: { isDone: !task?.isDone }});
   
       res.json(tasks);
