@@ -1,0 +1,13 @@
+.newTask{
+    margin-bottom: 8px;
+    font-size: xx-large;
+}
+
+input{
+    width: 200px;
+    font-family: 'Inter', Courier, monospace;
+    font-size: medium;
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 10px;
+}

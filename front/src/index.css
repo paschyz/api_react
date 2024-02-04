@@ -1,5 +1,37 @@
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.tasks{
+  margin-top: 130px;
+  color: whitesmoke;
+  font-family: 'Inter','sans-serif';
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+body{
+  background-color: #303138;
+}
+
+.labelTaskList{    
+  margin-top: 30px;
+  color: orange;
+  font-family: "Montserrat",'sans-serif';
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+li{
+  margin-bottom: 10px;
+  
+}
+ul{
+  list-style: none;
 }

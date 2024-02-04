@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
-
+import Header from "./components/Header";
 const App = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
@@ -59,14 +59,18 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h2>Task List</h2>
-      <TaskForm addTask={addTask} />
-      <TaskList
-        tasks={tasks}
-        onCheckTask={checkTask}
-        onDeleteTask={deleteTask}
-      />
+    <div className="App">
+      <Header></Header>
+      <div className="tasks">
+        <TaskForm addTask={addTask} />
+        <div className="TaskList">
+          <TaskList
+            tasks={tasks}
+            onCheckTask={checkTask}
+            onDeleteTask={deleteTask}
+          />
+        </div>
+      </div>
     </div>
   );
 };

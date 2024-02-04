@@ -1,0 +1,15 @@
+header{
+    background-color: #24252A;
+    padding: 25px 3%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+p{
+    color: orange;
+    font-family: "Montserrat",'sans-serif';
+    font-size: larger;
+    font-weight: 900;
+}

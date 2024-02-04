@@ -13,15 +13,18 @@ const TaskList: React.FC<TaskListProps> = ({
   onCheckTask,
   onDeleteTask,
 }) => (
-  <ul>
-    {tasks.map((task) => (
-      <li key={task.taskId}>
-        {task.name} - {task.isDone ? "Done" : "Not Done"} -{" "}
-        <button onClick={() => onCheckTask(task.taskId)}> Check</button>
-        <button onClick={() => onDeleteTask(task.taskId)}> Delete</button>
-      </li>
-    ))}
-  </ul>
+  <div>
+    <p className="labelTaskList">Task List</p>
+    <ul>
+      {tasks.map((task) => (
+        <li key={task.taskId}>
+          {task.name} - {task.isDone ? "Done" : "Not Done"} -{" "}
+          <button onClick={() => onCheckTask(task.taskId)}> Check</button>
+          <button onClick={() => onDeleteTask(task.taskId)}> Delete</button>
+        </li>
+      ))}
+    </ul>
+  </div>
 );
 
 export default TaskList;

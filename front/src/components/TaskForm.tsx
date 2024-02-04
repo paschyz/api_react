@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import "./TaskForm.css";
 
 interface TaskListProps {
   addTask: (name: string) => void;
@@ -14,9 +15,9 @@ const TaskForm: React.FC<TaskListProps> = ({ addTask }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="taskForm">
         <label>
-          Add Task:
+          <p className="newTask">New Task</p>
           <input
             type="text"
             value={taskName}
