@@ -13,4 +13,4 @@ const taskSchema = new Schema<ITask>({
 
 const TaskModel = model<ITask>('tasks', taskSchema);
 
-export { TaskModel };
+export { TaskModel, ITask };
