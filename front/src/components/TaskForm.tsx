@@ -24,7 +24,7 @@ const TaskForm: React.FC<TaskListProps> = ({ addTask }) => {
             onChange={(e) => setTaskName(e.target.value)}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button className="submit-button" type="submit">Submit</button>
       </form>
     </div>
   );

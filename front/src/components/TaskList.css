@@ -1,0 +1,56 @@
+.delete-button {
+    background-color: #f44336; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .delete-button:hover {
+    background-color: #d32f2f; 
+  }
+  
+  .check-button {
+    background-color: #4caf50; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .check-button:hover {
+    background-color: #388e3c; 
+  }
+  
+  .task-item {
+    list-style-type: none; /* Remove default list-style */
+    margin-bottom: 10px; /* Add some space between each task item */
+  }
+  
+  .task-name {
+    font-size: 16px;
+  }
+  
+  .done {
+  }
+  
+  .not-done {
+  }
+  .taskList-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    width: 25vw;
+}

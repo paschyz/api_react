@@ -7,14 +7,14 @@ import TaskList from "./components/TaskList";
 import Header from "./components/Header";
 const App = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
-
+  const apiUrl= "http://localhost:3000";
   useEffect(() => {
     console.log(tasks);
   }, [tasks]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000");
+        const response = await axios.get(apiUrl);
 
         setTasks(response.data);
       } catch (error) {
@@ -30,8 +30,8 @@ const App = () => {
       const body = {
         name: nameForm,
       };
-      await axios.post("http://localhost:3000", body);
-      const response = await axios.get("http://localhost:3000");
+      await axios.post(apiUrl, body);
+      const response = await axios.get(apiUrl);
       setTasks(response.data);
     } catch (error) {
       console.error("Error adding tasks:", error);
@@ -40,8 +40,8 @@ const App = () => {
 
   const checkTask = async (taskId: number) => {
     try {
-      await axios.put(`http://localhost:3000/check/${taskId}`);
-      const response = await axios.get("http://localhost:3000");
+      await axios.put(`${apiUrl}/check/${taskId}`);
+      const response = await axios.get(apiUrl);
       setTasks(response.data);
     } catch (error) {
       console.error("Error checking tasks:", error);
@@ -50,8 +50,8 @@ const App = () => {
 
   const deleteTask = async (taskId: number) => {
     try {
-      await axios.delete(`http://localhost:3000/${taskId}`);
-      const response = await axios.get("http://localhost:3000");
+      await axios.delete(`${apiUrl}/${taskId}`);
+      const response = await axios.get(apiUrl);
       setTasks(response.data);
     } catch (error) {
       console.error("Error deleting tasks:", error);
