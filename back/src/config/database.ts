@@ -1,8 +1,7 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 dotenv.config()
-
-const mongoURL = `${process.env.DB_CONN_STRING}${process.env.DB_NAME}`;
+const mongoURL = `mongodb+srv://admin:Respons11@todolist.lbok7sy.mongodb.net/todolist`;
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
