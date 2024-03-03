@@ -3,7 +3,7 @@ FROM node:18-alpine
 
 COPY package*.json ./
 RUN ls -la
-RUN npm ci
+RUN npm i
 
 COPY . .
 
