@@ -2,8 +2,9 @@
 import express from 'express';
 import { mongoose } from './config/database';
 import { router } from './routes/taskRoutes';
+import { env } from 'process';
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const db =mongoose;
 app.use(express.json());

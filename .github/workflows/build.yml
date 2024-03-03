@@ -1,0 +1,52 @@
+# .gitlab-ci.yml
+
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_HOST: tcp://docker:2375/  # Use docker:2375 service (Docker-in-Docker)
+  DOCKER_DRIVER: overlay2
+  IMAGE_BACKEND: paschyz/taskify-back
+  IMAGE_FRONTEND: paschyz/taskify-front
+
+services:
+  - docker:19.03.12-dind  # Use Docker-in-Docker service
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+build_backend:
+  stage: build
+  script:
+    - cd back
+    - docker build -t $IMAGE_BACKEND .
+    - docker push $IMAGE_BACKEND
+
+build_frontend:
+  stage: build
+  script:
+    - cd front
+    - docker build -t $IMAGE_FRONTEND .
+    - docker push $IMAGE_FRONTEND
+
+test:
+  stage: test
+  script:
+    # Run your tests here
+    - echo "Running tests..."
+
+deploy_backend:
+  stage: deploy
+  script:
+    - cd back
+    - docker-compose up -d
+
+deploy_frontend:
+  stage: deploy
+  script:
+    - cd front
+    - docker-compose up -d
+
+# Optionally, you might want to add additional jobs for deployment steps, like deploying to Kubernetes or other environments.
