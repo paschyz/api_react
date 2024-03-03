@@ -13,9 +13,6 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Checkout front directory
-        run: cd front
-
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
@@ -28,6 +25,9 @@ jobs:
         with:
           images: my-docker-hub-namespace/my-docker-hub-repository
 
+      - name: Checkout front directory
+        run: cd front
+        
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
