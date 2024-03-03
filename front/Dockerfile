@@ -1,10 +1,12 @@
-FROM node:14-alpine
+
+FROM node:16-bullseye
 
 WORKDIR /app
 
-COPY package.json .
+COPY package*.json ./
 
-RUN npm install
+# Install dependencies
+RUN npm install --force
 
 COPY . .
 
