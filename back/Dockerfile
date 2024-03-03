@@ -1,9 +1,11 @@
 FROM node:18-alpine
 
+WORKDIR /
 
-COPY package*.json ./
+
+COPY . .
 RUN ls -la
-RUN npm i
+RUN npm ci
 
 COPY . .
 
